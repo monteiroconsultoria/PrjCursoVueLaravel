@@ -7,7 +7,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
+import Vuex from 'Vuex';
+Vue.use(Vuex);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,8 +20,15 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('painel-component', require('./components/Painel.vue').default);
 Vue.component('topo-component', require('./components/Topo.vue').default);
+Vue.component('caixa-component', require('./components/Caixa.vue').default);
+Vue.component('pagina-component', require('./components/Pagina.vue').default);
+Vue.component('tabela-lista-component', require('./components/TabelaLista.vue').default);
+Vue.component('migalhas-component', require('./components/Migalhas.vue').default);
+Vue.component('modal-component', require('./components/modal/Modal.vue').default);
+Vue.component('modallink-component', require('./components/modal/ModalLink.vue').default);
+Vue.component('formulario-component', require('./components/Formulario.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

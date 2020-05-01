@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,6 +20,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function(){
 
-Route::get('/home', 'HomeController@index')->name('home');
+  Route::resource('artigos', 'ArtigosController');
+
+});
